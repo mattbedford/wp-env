@@ -28,10 +28,10 @@ services:
       dockerfile: php.dockerfile
     volumes:
       - ./wordpress:/var/www/html
-    wp:
-      build:
-        context: .
-        dockerfile: php.dockerfile
-      entrypoint: ['wp', '--allow-root']
-      volumes:
-        - ./wordpress:/var/www/html
+  wp:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    entrypoint: ['wp', '--allow-root']
+    volumes:
+      - ./wordpress:/var/www/html
