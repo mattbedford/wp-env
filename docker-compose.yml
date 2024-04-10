@@ -23,15 +23,15 @@ services:
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
   php:
-  build:
-    context: .
-    dockerfile: php.dockerfile
-  volumes:
-    - ./wordpress:/var/www/html
-  wp:
     build:
       context: .
       dockerfile: php.dockerfile
-    entrypoint: ['wp', '--allow-root']
     volumes:
       - ./wordpress:/var/www/html
+    wp:
+      build:
+        context: .
+        dockerfile: php.dockerfile
+      entrypoint: ['wp', '--allow-root']
+      volumes:
+        - ./wordpress:/var/www/html
